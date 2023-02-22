@@ -1,37 +1,37 @@
 ﻿// SEE ALSO: https://en.wikipedia.org/wiki/Generator_(computer_programming)
 
-Console.WriteLine("------------Get 2 times---------------");
+Console.WriteLine("------------Get---------------");
 Console.WriteLine(string.Join(", ", Get())); 
 Console.WriteLine(string.Join(", ", Get()));
 
-Console.WriteLine("------------Get one time---------------");
+Console.WriteLine("------------Get---------------");
 var e = Get();
 Console.WriteLine(string.Join(", ", e));
 Console.WriteLine(string.Join(", ", e));
 
-Console.WriteLine("------------foreach over IEnumerable---------------");
+Console.WriteLine("------------foreach---------------");
 var enumerable = Get();
 foreach (var item in enumerable)
     Console.WriteLine(item);
 
-Console.WriteLine("------------Count on IEnumerable---------------");
+Console.WriteLine("------------count---------------");
 var e2 = Get();
 Console.WriteLine(e2.Count());
 
-Console.WriteLine("------------foreach over IEnumerable.ToList---------------");
+Console.WriteLine("------------foreach IEnumerable.ToList---------------");
 var list = Get().ToList();
 foreach (var item in list)
     Console.WriteLine(item);
 
 
-Console.WriteLine("------------Some Linq over IEnumerable---------------");
+Console.WriteLine("------------Linq---------------");
 var count = Get()
         .Where(x => { Console.WriteLine("Where " + x); return x < 10; })
         .Select(x => { Console.WriteLine("Select " + x); return x; })
         .Count();
 Console.WriteLine(count);
 
-Console.WriteLine("------------Some Linq over IEnumerable.ToList---------------");
+Console.WriteLine("------------Linq IEnumerable.ToList---------------");
 var count2 = Get().ToList()
         .Where(x => { Console.WriteLine("Where " + x); return x < 10; }).ToList()
         .Select(x => { Console.WriteLine("Select " + x); return x; }).ToList()
